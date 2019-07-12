@@ -30,9 +30,9 @@ Please use the same model as SiamMask
 </div>
 
 ## Reference
-@article{chen2019fastvot,
+@article{chen2019fast,
 title={Fast Visual Object Tracking with Rotated Bounding Boxes},
-author={Chen, Bao Xin and Tsotsos, John K.},
+author={Chen, Bao Xin and Tsotsos, John K},
 journal={arXiv preprint arXiv:1907.03892},
 year={2019}
 }
