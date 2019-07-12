@@ -61,59 +61,48 @@ class SiamMaskETracker(SiamRPNTracker):
             center = np.array(ellipseBox[0])
             axes = np.array(ellipseBox[1])
             
-            if np.max(axes)*0.90 > np.min(axes):
-                # get the ellipse box
-                ellipseBox = cv2.boxPoints(ellipseBox)
-                
-                #compute the rotation matrix
-                rot_mat = cv2.getRotationMatrix2D((center[0],center[1]), angle, 1.0)
-                
-                # rotate the ellipse box
-                one = np.ones([ellipseBox.shape[0],3,1])
-                one[:,:2,:] = ellipseBox.reshape(-1,2,1)
-                ellipseBox = np.matmul(rot_mat, one).reshape(-1,2)
-                
-                # to xmin ymin xmax ymax
-                xs = ellipseBox[:,0]
-                xmin, xmax = np.min(xs), np.max(xs)
-                ys = ellipseBox[:,1]
-                ymin, ymax = np.min(ys), np.max(ys)
-                ellipseBox = [xmin, ymin, xmax, ymax]
-                
-                # rotate the contour
-                one = np.ones([polygon.shape[0],3,1])
-                one[:,:2,:] = polygon.reshape(-1,2,1)
-                polygon = np.matmul(rot_mat, one).astype(int).reshape(-1,2)
-                
-                # remove points outside of the ellipseBox
-                logi = polygon[:,0]<=xmax
-                logi = np.logical_and(polygon[:,0]>=xmin, logi)
-                logi = np.logical_and(polygon[:,1]>=ymin, logi)
-                logi = np.logical_and(polygon[:,1]<=ymax, logi)
-                polygon = polygon[logi,:]
-                
-                x,y,w,h = cv2.boundingRect(polygon)
-                bRect = [x, y, x+w, y+h]
-                
-                # get the intersection of ellipse box and the rotated box
-                x1, y1, x2, y2 = ellipseBox[0], ellipseBox[1], ellipseBox[2], ellipseBox[3]
-                tx1, ty1, tx2, ty2 = bRect[0], bRect[1], bRect[2], bRect[3]
-                xx1 = min(max(tx1, x1, 0), target_mask.shape[1]-1)
-                yy1 = min(max(ty1, y1, 0), target_mask.shape[0]-1)
-                xx2 = max(min(tx2, x2, target_mask.shape[1]-1), 0)
-                yy2 = max(min(ty2, y2, target_mask.shape[0]-1), 0)
-                
-                rotated_mask = cv2.warpAffine(target_mask, rot_mat,(target_mask.shape[1],target_mask.shape[0]))
-            else:
-                
-                #axis aligned bounding box
-                x,y,w,h = cv2.boundingRect(polygon)
-                x1, y1, x2, y2 = x, y, x+w, y+h
-                xx1 = min(max(x1, 0), target_mask.shape[1]-1)
-                yy1 = min(max(y1, 0), target_mask.shape[0]-1)
-                xx2 = max(min(x2, target_mask.shape[1]-1), 0)
-                yy2 = max(min(y2, target_mask.shape[0]-1), 0)
-                rotated_mask = target_mask
+            # get the ellipse box
+            ellipseBox = cv2.boxPoints(ellipseBox)
+            
+            #compute the rotation matrix
+            rot_mat = cv2.getRotationMatrix2D((center[0],center[1]), angle, 1.0)
+            
+            # rotate the ellipse box
+            one = np.ones([ellipseBox.shape[0],3,1])
+            one[:,:2,:] = ellipseBox.reshape(-1,2,1)
+            ellipseBox = np.matmul(rot_mat, one).reshape(-1,2)
+            
+            # to xmin ymin xmax ymax
+            xs = ellipseBox[:,0]
+            xmin, xmax = np.min(xs), np.max(xs)
+            ys = ellipseBox[:,1]
+            ymin, ymax = np.min(ys), np.max(ys)
+            ellipseBox = [xmin, ymin, xmax, ymax]
+            
+            # rotate the contour
+            one = np.ones([polygon.shape[0],3,1])
+            one[:,:2,:] = polygon.reshape(-1,2,1)
+            polygon = np.matmul(rot_mat, one).astype(int).reshape(-1,2)
+            
+            # remove points outside of the ellipseBox
+            logi = polygon[:,0]<=xmax
+            logi = np.logical_and(polygon[:,0]>=xmin, logi)
+            logi = np.logical_and(polygon[:,1]>=ymin, logi)
+            logi = np.logical_and(polygon[:,1]<=ymax, logi)
+            polygon = polygon[logi,:]
+            
+            x,y,w,h = cv2.boundingRect(polygon)
+            bRect = [x, y, x+w, y+h]
+            
+            # get the intersection of ellipse box and the rotated box
+            x1, y1, x2, y2 = ellipseBox[0], ellipseBox[1], ellipseBox[2], ellipseBox[3]
+            tx1, ty1, tx2, ty2 = bRect[0], bRect[1], bRect[2], bRect[3]
+            xx1 = min(max(tx1, x1, 0), target_mask.shape[1]-1)
+            yy1 = min(max(ty1, y1, 0), target_mask.shape[0]-1)
+            xx2 = max(min(tx2, x2, target_mask.shape[1]-1), 0)
+            yy2 = max(min(ty2, y2, target_mask.shape[0]-1), 0)
+            
+            rotated_mask = cv2.warpAffine(target_mask, rot_mat,(target_mask.shape[1],target_mask.shape[0]))
             
             #refinement
             alpha_factor = 0.20
@@ -156,13 +145,12 @@ class SiamMaskETracker(SiamRPNTracker):
             
             prbox = np.array([[xx1,yy1],[xx2,yy1],[xx2,yy2],[xx1,yy2]])
             
-            if np.max(axes)*0.90 > np.min(axes):
-                # inverse of the rotation matrix
-                M_inv = cv2.invertAffineTransform(rot_mat)
-                # project the points back to image coordinate
-                one = np.ones([prbox.shape[0],3,1])
-                one[:,:2,:] = prbox.reshape(-1,2,1)
-                prbox = np.matmul(M_inv, one).reshape(-1,2)
+            # inverse of the rotation matrix
+            M_inv = cv2.invertAffineTransform(rot_mat)
+            # project the points back to image coordinate
+            one = np.ones([prbox.shape[0],3,1])
+            one[:,:2,:] = prbox.reshape(-1,2,1)
+            prbox = np.matmul(M_inv, one).reshape(-1,2)
             
             rbox_in_img = prbox
         else:  # empty mask
