@@ -24,6 +24,11 @@ Please use the same model as SiamMask
   <img src="table.png" width="800px" />
 </div>
 
+## Sample outputs
+<div align="center">
+  <img src="outputs.png" width="800px" />
+</div>
+
 ## Citation
 @article{chen2019fastvot,
   title={Fast Visual Object Tracking with Rotated Bounding Boxes},
