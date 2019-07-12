@@ -29,46 +29,22 @@ Please use the same model as SiamMask
   <img src="outputs.png" width="800px" />
 </div>
 
-## Citation
+## Reference
 @article{chen2019fastvot,
 title={Fast Visual Object Tracking with Rotated Bounding Boxes},
 author={Chen, Bao Xin and Tsotsos, John K.},
 journal={arXiv preprint arXiv:1907.03892},
 year={2019}
 }
-
-### Reference
 @article{wang2018fast,
 title={Fast Online Object Tracking and Segmentation: A Unifying Approach},
 author={Wang, Qiang and Zhang, Li and Bertinetto, Luca and Hu, Weiming and Torr, Philip HS},
 journal={arXiv preprint arXiv:1812.05050},
 year={2018}
 }
-
 @article{li2018siamrpn++,
 title={SiamRPN++: Evolution of Siamese Visual Tracking with Very Deep Networks},
 author={Li, Bo and Wu, Wei and Wang, Qiang and Zhang, Fangyi and Xing, Junliang and Yan, Junjie},
 journal={arXiv preprint arXiv:1812.11703},
 year={2018}
-}
-
-@misc {Kristan2016a,
-title = {The Visual Object Tracking VOT2016 challenge results},
-url = {http://www.springer.com/gp/book/9783319488806},
-author = {Matej Kristan and Ale\v{s} Leonardis and Jiri Matas and Michael Felsberg and Roman Pflugfelder and Luka \v{C}ehovin Zajc and Tomas Vojir and Gustav H\"{a}ger and Alan Luke\v{z}i\v{c} and Gustavo Fernandez},
-month = {Oct},
-year = {2016},
-howpublished = {Springer}
-}
-
-@misc {Kristan2018a,
-year = {2018},
-author = {Matej Kristan and Ale\v{s} Leonardis and Jiri Matas and Michael Felsberg and Roman Pflugfelder and Luka \v{C}ehovin Zajc and Tomas Vojir and Gustav H\"{a}ger and Alan Luke\v{z}i\v{c} and Abdelrahman Eldesokey and Gustavo Fernandez and et al.},
-title = {The sixth Visual Object Tracking VOT2018 challenge results}
-}
-
-@misc {Kristan2019a,
-year = {2019},
-author = {Matej Kristan and Ale\v{s} Leonardis and Jiri Matas and Michael Felsberg and Roman Pflugfelder and Luka \v{C}ehovin Zajc and Tomas Vojir and Gustav H\"{a}ger and Alan Luke\v{z}i\v{c} and Abdelrahman Eldesokey and Gustavo Fernandez and et al.},
-title = {The Seventh Visual Object Tracking VOT2019 challenge results}
 }
