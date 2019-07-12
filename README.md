@@ -36,12 +36,14 @@ author={Chen, Bao Xin and Tsotsos, John K.},
 journal={arXiv preprint arXiv:1907.03892},
 year={2019}
 }
+
 @article{wang2018fast,
 title={Fast Online Object Tracking and Segmentation: A Unifying Approach},
 author={Wang, Qiang and Zhang, Li and Bertinetto, Luca and Hu, Weiming and Torr, Philip HS},
 journal={arXiv preprint arXiv:1812.05050},
 year={2018}
 }
+
 @article{li2018siamrpn++,
 title={SiamRPN++: Evolution of Siamese Visual Tracking with Very Deep Networks},
 author={Li, Bo and Wu, Wei and Wang, Qiang and Zhang, Fangyi and Xing, Junliang and Yan, Junjie},
