@@ -18,7 +18,7 @@ python tools/demo.py \
 ```
 
 ## Model
-Please use the same model as SiamMask, refer to [PySOT Model Zoo](https://github.com/STVIR/pysot/MODEL_ZOO.md)
+Please use the same model as SiamMask, refer to [PySOT Model Zoo](https://github.com/STVIR/pysot/)
 
 ## Short-term Tracking on VOT2016, 2018, 2019
 <div align="center">
