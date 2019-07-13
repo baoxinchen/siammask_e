@@ -22,12 +22,12 @@ Please use the same model as SiamMask, refer to [PySOT Model Zoo](https://github
 
 ## Short-term Tracking on VOT2016, 2018, 2019
 <div align="center">
-  <img src="table.png" width="800px" />
+  <img src="images/table.png" width="800px" />
 </div>
 
 ## Sample outputs
 <div align="center">
-  <img src="outputs.png" width="800px" />
+  <img src="images/outputs.png" width="800px" />
 </div>
 
 ## Reference
