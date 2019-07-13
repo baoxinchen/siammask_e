@@ -1,6 +1,7 @@
 # SiamMask_E
-In this project, we demonstrate a novel algorithm that uses ellipse ﬁtting to estimate the bounding box rotation angle and size with the segmentation(mask) on the target for online and real-time visual object tracking. Our method, SiamMask E, improves the bounding box ﬁtting procedure of the state-of-the-art object tracking algorithm SiamMask and still retains a fast-tracking frame rate (80 fps) on a system equipped with GPU (GeForce GTX 1080 Ti or higher). We tested our approach on the visual object tracking datasets (VOT2016, VOT2018, and VOT2019) that were labeled with rotated bounding boxes. By comparing with the original SiamMask, we achieved an improved Accuracy of 64.5% and 30.3% EAO on VOT2019, which is 4.9% and 2% higher than the original SiamMask. 
-This repository is the add-on package for pysot(https://github.com/STVIR/pysot) project.
+In this project, we demonstrate a novel algorithm that uses ellipse ﬁtting to estimate the bounding box rotation angle and size with the segmentation(mask) on the target for online and real-time visual object tracking. Our method, SiamMask E, improves the bounding box ﬁtting procedure of the state-of-the-art object tracking algorithm SiamMask and still retains a fast-tracking frame rate (80 fps) on a system equipped with GPU (GeForce GTX 1080 Ti or higher). We tested our approach on the visual object tracking datasets (VOT2016, VOT2018, and VOT2019) that were labeled with rotated bounding boxes. By comparing with the original SiamMask, we achieved an improved Accuracy of 64.5% and 30.3% EAO on VOT2019, which is 4.9% and 2% higher than the original SiamMask.
+ 
+This repository is the add-on package for [PySOT](https://github.com/STVIR/pysot) project.
 
 ## Merge file to pysot
 ```bash
@@ -17,7 +18,7 @@ python tools/demo.py \
 ```
 
 ## Model
-Please use the same model as SiamMask
+Please use the same model as SiamMask, refer to [PySOT Model Zoo](https://github.com/STVIR/pysot/MODEL_ZOO.md)
 
 ## Short-term Tracking on VOT2016, 2018, 2019
 <div align="center">
