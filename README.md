@@ -31,6 +31,7 @@ Please use the same model as SiamMask, refer to [PySOT Model Zoo](https://github
 </div>
 
 ## Reference
+```
 @article{chen2019fast,
 title={Fast Visual Object Tracking with Rotated Bounding Boxes},
 author={Chen, Bao Xin and Tsotsos, John K},
@@ -51,3 +52,4 @@ author={Li, Bo and Wu, Wei and Wang, Qiang and Zhang, Fangyi and Xing, Junliang 
 journal={arXiv preprint arXiv:1812.11703},
 year={2018}
 }
+```
