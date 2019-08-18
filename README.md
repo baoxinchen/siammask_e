@@ -5,6 +5,7 @@ This repository is the add-on package for [PySOT](https://github.com/STVIR/pysot
 
 ## News
 Aug. 14, 2019: posted results on datasets: VOT2016, VOT2018, VOT2019.
+
 Aug. 12, 2019: accepted as a workshop paper in ICCV2019 The Visual Object Tracking Challenge Workshop VOT2019.
 
 ## Merge file to pysot
