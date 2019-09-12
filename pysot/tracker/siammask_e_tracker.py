@@ -105,7 +105,7 @@ class SiamMaskETracker(SiamRPNTracker):
             rotated_mask = cv2.warpAffine(target_mask, rot_mat,(target_mask.shape[1],target_mask.shape[0]))
             
             #refinement
-            alpha_factor = 0.20
+            alpha_factor = cfg.TRACK.FACTOR
             while True:
                 if np.sum(rotated_mask[int(yy1):int(yy2),int(xx1)]) < (yy2-yy1)*alpha_factor:
                     temp = xx1+(xx2-xx1)*0.02
