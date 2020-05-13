@@ -6,6 +6,10 @@ In this project, we demonstrate a novel algorithm that uses ellipse ﬁtting to 
  
 This repository is the add-on package for [PySOT](https://github.com/STVIR/pysot) project.
 
+## Paper
+
+[Fast Visual Object Tracking with Rotated Bounding Boxes](https://arxiv.org/abs/1907.03892)
+
 ## News
 Aug. 14, 2019: posted results on datasets: VOT2016, VOT2018, VOT2019.
 
